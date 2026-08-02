@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Contact Us - Stull Chiropractic Center, Kettering OH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="sage.css">
+<style>
+/* Stull preview only. sage.css is byte-identical to the mockup's. */
+.brand__logo{height:56px;width:auto;display:block}
+.brand__logo--dark{display:none}
+.nav.is-stuck .brand__logo--light{display:none}
+.nav.is-stuck .brand__logo--dark{display:block}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     CONTACT  (/contact-us/ on the :8089 build, and the same
+     treatment covers /special/, the New Patient Special)
+
+     The build's version is the thinnest page on the site: a slim
+     H1 strip, then a bare Breakdance form on white with nothing
+     beside it. Same fields in the same order here - the form is
+     native BD and stays native BD - but the page now answers the
+     things a person about to call actually wants: where you are,
+     when you are open, what happens after they hit send.
+
+     /special/ IS NOT THIS PAGE. The first pass of this set said
+     it was, and that was wrong: /special/ is the new-patient
+     OFFER page and the fallback target of `bookingLink()`, so it
+     carries the offer cards and their popups. It has its own
+     mockup, `special.html`. The only thing the two share is a
+     form. Every booking CTA on this set now points there, which
+     is what the build does.
+     ============================================================ -->
+
+<div class="util">
+  <div class="wrap">
+    <a href="https://www.google.com/maps/search/?api=1&query=Stull+Chiropractic+Center%2C+2200+Woodman+Drive%2C+Kettering%2C+OH+45420" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 2200 Woodman Drive, Kettering</a>
+    <a href="tel:9372598850"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg> (937) 259-8850</a>
+    <span class="spacer"></span>
+    <span class="hide-s">Open Monday to Thursday</span>
+    <a href="https://www.facebook.com/StullChiropracticCenter/" target="_blank" rel="noopener" class="soc" aria-label="Facebook"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+    <a href="https://www.instagram.com/stullchiropracticcenteroh/" target="_blank" rel="noopener" class="soc" aria-label="Instagram"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/></svg></a>
+  </div>
+</div>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <div class="nav__inner">
+      <a href="index.html" class="brand" aria-label="Stull Chiropractic Center"><img class="brand__logo brand__logo--light" src="assets/stull-logo-white.svg" alt="Stull Chiropractic Center"><img class="brand__logo brand__logo--dark" src="assets/stull-logo-black.svg" alt="" aria-hidden="true"></a>
+      <div class="nav__links">
+        <a href="index.html">Home</a><a href="stull-about.html">Who We Are</a><a href="stull-services.html">Services</a><a href="stull-conditions.html">Conditions</a><a href="stull-contact.html" class="on">Contact</a>
+      </div>
+      <div class="nav__cta">
+        <a href="stull-special.html" class="btn btn-lite">Book a Visit</a>
+        <button class="nav__burger" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="ihero ihero--green on-dark">
+  <div class="ghost ghost--r" style="right:-3%;top:18%">Hello</div>
+  <div class="wrap">
+    <div class="ihero__in">
+      <nav class="crumb reveal" style="--d:0"><a href="index.html">Home</a><i>/</i><b>Contact</b></nav>
+      <span class="eyebrow reveal" style="--d:1">Get in touch</span>
+      <h1><span class="mask"><span style="--d:2">Contact <em style="font-style:normal;color:var(--g-lite)">us</em></span></span></h1>
+      <span class="rule"></span>
+      <p class="ihero__sub reveal" style="--d:5">Tell us what is going on and we will call you back to book you in, usually the same week. If you would rather just talk to somebody, the number is at the top of the page.</p>
+    </div>
+  </div>
+  <div class="wave" style="--wave-end:#fff">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+  </div>
+</header>
+
+<section class="sec grain" id="form">
+  <div class="wrap">
+    <div class="contact__grid">
+
+      <div class="reveal">
+        <span class="eyebrow">Send us a message</span>
+        <h2 style="font-size:clamp(28px,3vw,44px);margin-top:.3em">We will get back to you</h2>
+        <span class="rule"></span>
+        <p class="lead" style="margin-top:1.3em;margin-bottom:2em">Fill out the form, including the required fields, and we will contact you as soon as possible.</p>
+
+        <!-- Native Breakdance FormBuilder, one to one with the build's fields.
+             The mockup styles them; it does not replace the element. -->
+        <form class="form" onsubmit="return false">
+          <div class="field"><label for="fn">First name <i>*</i></label><input id="fn" name="first_name" type="text" required></div>
+          <div class="field"><label for="ln">Last name <i>*</i></label><input id="ln" name="last_name" type="text" required></div>
+          <div class="field"><label for="ph">Phone</label><input id="ph" name="phone" type="tel"></div>
+          <div class="field"><label for="em">Email <i>*</i></label><input id="em" name="email" type="email" required></div>
+          <div class="field field--full"><label for="ms">Message <i>*</i></label><textarea id="ms" name="message" required placeholder="What is going on, and when did it start?"></textarea></div>
+          <div class="form__act">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <small>We reply during office hours, usually the same day. This form does not go anywhere in the mockup.</small>
+          </div>
+        </form>
+      </div>
+
+      <aside class="info reveal" style="--d:1">
+        <div class="info__row">
+          <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <span><b style="font-weight:500">2200 Woodman Drive, Kettering, OH</b><small>Kettering, OH 45420</small></span>
+        </div>
+        <div class="info__row">
+          <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg></span>
+          <span><a href="tel:9372598850" style="font-weight:500">(937) 259-8850</a><small>Fastest way to get a same-week slot</small></span>
+        </div>
+
+        <div class="card" style="padding:clamp(20px,1.8vw,26px)">
+          <h4 style="font-size:16px">Office hours</h4>
+          <ul class="hours" style="margin-top:1em">
+            <li><span>Monday</span><b>9:00 AM – 1:00 PM, 3:00 PM – 6:00 PM</b></li>
+            <li><span>Tuesday</span><b>9:00 AM – 1:00 PM, 3:00 PM – 5:00 PM</b></li>
+            <li><span>Wednesday</span><b>9:00 AM – 1:00 PM, 3:00 PM – 6:00 PM</b></li>
+            <li><span>Thursday</span><b>9:00 AM – 1:00 PM, 3:00 PM – 6:00 PM</b></li>
+            <li><span>Friday</span><b>Closed</b></li>
+            <li><span>Saturday</span><b>Closed</b></li>
+            <li><span>Sunday</span><b>Closed</b></li>
+          </ul>
+        </div>
+
+        <div class="mapslot" style="border:0;padding:0;overflow:hidden">
+          <iframe src="https://maps.google.com/maps?q=Stull%20Chiropractic%20Center%2C%202200%20Woodman%20Drive%2C%20Kettering%2C%20OH%2045420&z=15&output=embed" style="width:100%;height:100%;border:0;border-radius:inherit" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Stull Chiropractic Center"></iframe>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT HAPPENS NEXT ============
+     Not on the build's contact page. Added because the single most
+     common reason a chiropractic contact form is abandoned is not
+     knowing what sending it commits you to. Three steps, the same
+     component as the service page's process band. -->
+<section class="sec sec--paper grain">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <span class="eyebrow">After you send</span>
+        <h2>What happens next</h2>
+        <span class="rule"></span>
+      </div>
+      <p class="head__note lead">No obligation at any point, and no one will chase you.</p>
+    </div>
+    <div class="steps" style="grid-template-columns:repeat(3,1fr)">
+      <div class="step reveal" style="--d:0"><span class="step__n">1</span><h3>We call you back</h3><p>Usually the same day, during office hours, from the number above.</p></div>
+      <div class="step reveal" style="--d:1"><span class="step__n">2</span><h3>We find you a time</h3><p>Most new patients are seen within the same week. </p></div>
+      <div class="step reveal" style="--d:2"><span class="step__n">3</span><h3>Your first visit</h3><p>About forty minutes: a conversation, a careful check, and a plan you agree to before anything else happens.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot" id="foot">
+  <div class="wrap">
+    <div class="foot__megawrap"><h2 class="foot__mega" id="mega">Come <em>In</em></h2></div>
+    <div class="foot__cards">
+      <div class="card fc fc--g reveal" style="--d:0"><h4>Stull Chiropractic Center</h4><ul><li>2200 Woodman Drive<br>Kettering, OH</li><li><a href="tel:9372598850">(937) 259-8850</a></li><li>Open Monday to Thursday</li></ul></div>
+      <div class="card fc reveal" style="--d:1"><h4>Services</h4><ul><li><a href="stull-services.html">Chiropractic Adjustment</a></li><li><a href="stull-service-spinal-decompression.html">Spinal Decompression</a></li><li><a href="stull-service-mls-laser-therapy.html">MLS Laser Therapy</a></li><li><a href="stull-service-shockwave-therapy.html">Shockwave Therapy</a></li><li><a href="stull-service-custom-orthotics.html">Custom Orthotics</a></li></ul></div>
+      <div class="card fc reveal" style="--d:2"><h4>Conditions</h4><ul><li><a href="stull-conditions.html">Back Pain</a></li><li><a href="stull-condition-neck-pain.html">Neck Pain</a></li><li><a href="stull-condition-headaches-and-migraines.html">Headaches & Migraines</a></li><li><a href="stull-condition-sciatica.html">Sciatica</a></li><li><a href="stull-conditions.html">All conditions</a></li></ul></div>
+    </div>
+    <div class="foot__base"><span>&copy; 2026 Stull Chiropractic Center</span><span class="spacer"></span><span>Preview for client review. Not yet live.</span></div>
+  </div>
+</footer>
+
+<div class="mobar">
+  <a href="tel:9372598850" class="btn btn-ghost">Call</a>
+  <a href="#form" class="btn btn-primary">Send a message</a>
+</div>
+
+<script src="sage.js"></script>
+</body>
+</html>
