@@ -41,10 +41,16 @@
     <div class="nav__inner">
       <a href="index.html" class="brand" aria-label="Stull Chiropractic Center"><img class="brand__logo brand__logo--light" src="assets/stull-logo-white.svg" alt="Stull Chiropractic Center"><img class="brand__logo brand__logo--dark" src="assets/stull-logo-black.svg" alt="" aria-hidden="true"></a>
       <div class="nav__links">
-        <a href="index.html" class="on">Home</a><a href="stull-about.html">Who We Are</a><a href="stull-services.html">Services</a><a href="stull-conditions.html">Conditions</a><a href="stull-contact.html">Contact</a>
+        <a href="index.html" class="on">Home</a><a href="stull-about.html">Who We Are</a><a href="stull-services.html">Services</a><a href="stull-conditions.html">Conditions</a><a href="stull-new-patient-forms.html">Patient Forms</a><a href="stull-contact.html">Contact</a>
       </div>
       <div class="nav__cta">
-        <a href="stull-special.html" class="btn btn-lite">Book a Visit</a>
+        <!-- BOOKING LINK INSERTION POINT (2026-08-09). His online booking is for EXISTING
+             patients only and he has not supplied the URL or iframe code. When he does, it
+             goes HERE as a second nav link, e.g.
+               <a href="URL" class="btn btn-ghost">Existing patients</a>
+             It is deliberately NOT a second CTA anywhere else on the page. See
+             stull-chiropractic/CLIENT-FACTS.md > "Online booking". -->
+        <a href="stull-contact.html#form" class="btn btn-lite">Schedule an appointment</a>
         <button class="nav__burger" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
       </div>
     </div>
@@ -76,9 +82,10 @@
       <span class="rule"></span>
       <p class="hero__sub reveal" style="--d:5">Care here starts with listening. We take the time to understand where your discomfort begins, then build a simple plan around your goals.</p>
       <div class="hero__acts reveal" style="--d:6">
-        <a href="#book" class="btn btn-lite">Schedule An Appointment</a>
+        <a href="#book" class="btn btn-lite">Schedule an appointment</a>
         <a href="tel:9372598850" class="btn btn-ghost">(937) 259-8850</a>
       </div>
+      <p class="reveal" style="--d:7;margin-top:1.1em;font-size:15px;opacity:.85">Tell us a good time and we'll call to confirm.</p>
       <!-- Sage's real hero carries no stat row. Three placeholder figures
            crowded the photo and put three unsourced numbers above the fold.
            The proof lives in the bento band instead. -->
@@ -112,7 +119,7 @@
           <p class="muted">At Stull Chiropractic Center, our mission is to help every patient achieve lasting health through natural, personalized, and effective chiropractic care. We identify the true cause of pain, restore proper function, and give patients the tools and education they need to live active, pain-free lives.</p>
           <p class="muted">As trusted Veteran VA providers, we deliver high-quality, conservative care to veterans and the wider community. Our goal is to improve mobility, support long-term spinal health, and give each patient a clear treatment plan tailored to their needs.</p>
         </div>
-        <div style="margin-top:2em"><a href="stull-special.html" class="btn btn-primary">Get Started Today</a></div>
+        <div style="margin-top:2em"><a href="stull-contact.html#form" class="btn btn-primary">Schedule an appointment</a></div>
       </div>
       <!-- THE LIFE THEY WANT BACK, not the practice. Stock never depicts a
            doctor-patient relationship (John, 2026-08-01) - that is client-photo
@@ -157,8 +164,8 @@
       </article>
       <article class="card b b--img reveal" style="--d:2"><img src="assets/mls-laser-therapy.webp" alt="MLS laser therapy" loading="lazy"><span class="tag">MLS laser therapy</span></article>
       <article class="card b b--green reveal" style="--d:3">
-        <div><div class="b__n">Free</div><div class="b__l">Consultation, no obligation</div></div>
-        <p style="margin-top:1.3em;max-width:38ch">Come in, tell us what is going on, and hear what we would do about it before you commit to anything.</p>
+        <div><div class="b__n">VA</div><div class="b__l">Veteran VA provider</div></div>
+        <p style="margin-top:1.3em;max-width:38ch">We deliver conservative, high-quality care to veterans and to the wider Kettering community.</p>
       </article>
       <article class="card b b--quote reveal" style="--d:4">
         <blockquote>"Amazing people! Dr. Stull is always on schedule and very kind and patient. He has fixed my TMJ, back, and orthotics!"</blockquote>
@@ -254,7 +261,7 @@
           <p class="lead solo__body">Dr. Stull's path to chiropractic began as a pre-med and biology student at the University of Dayton, where he met a practitioner helping patients overcome serious health challenges without drugs or surgery. What moved him most was the connection that doctor built with his patients — and it set the standard he has practiced by ever since.</p>
           <div class="solo__acts">
             <a href="stull-about.html" class="btn btn-primary">Read the full bio</a>
-            <a href="#book" class="btn btn-ghost">Book a Visit</a>
+            <a href="#book" class="btn btn-ghost">Schedule an appointment</a>
           </div>
         </div>
       </div>
@@ -296,9 +303,10 @@
         <span class="rule"></span>
         <p style="margin-top:1.4em;max-width:48ch">We start by listening carefully to understand what is going on, then build a plan shaped around your body and your goals, so your care fits your life rather than the other way around.</p>
         <div style="margin-top:2em;display:flex;gap:12px;flex-wrap:wrap">
-          <a href="stull-special.html" class="btn btn-lite">Claim Your Complimentary Consultation</a>
+          <a href="stull-contact.html#form" class="btn btn-lite">Schedule an appointment</a>
           <a href="tel:9372598850" class="btn btn-ghost">(937) 259-8850</a>
         </div>
+        <p style="margin-top:1.1em;font-size:15px;opacity:.85">Tell us a good time and we'll call to confirm.</p>
       </div>
       <!-- Hours and location EXPAND, because split hours are common and a flat
            "Mon to Fri 8-6" is a lie for most practices. No-referral stays a plain
@@ -361,7 +369,7 @@
   <div class="wrap">
     <div class="foot__megawrap"><h2 class="foot__mega" id="mega">Contact <em>Us</em></h2></div>
     <div class="foot__cards">
-      <div class="card fc fc--g reveal" style="--d:0"><h4>Stull Chiropractic Center</h4><ul><li>2200 Woodman Drive<br>Kettering, OH 45420</li><li><a href="tel:9372598850">(937) 259-8850</a></li><li>Open Monday to Thursday</li></ul></div>
+      <div class="card fc fc--g reveal" style="--d:0"><h4>Stull Chiropractic Center</h4><ul><li>2200 Woodman Drive<br>Kettering, OH 45420</li><li><a href="tel:9372598850">(937) 259-8850</a></li><li>Open Monday to Thursday</li><li><a href="stull-new-patient-forms.html">New patient paperwork</a></li></ul></div>
       <div class="card fc reveal" style="--d:1"><h4>Services</h4><ul><li><a href="stull-service-chiropractic-adjustment.html">Chiropractic Adjustment</a></li><li><a href="stull-service-spinal-decompression.html">Spinal Decompression</a></li><li><a href="stull-service-mls-laser-therapy.html">MLS Laser Therapy</a></li><li><a href="stull-service-shockwave-therapy.html">Shockwave Therapy</a></li><li><a href="stull-service-custom-orthotics.html">Custom Orthotics</a></li></ul></div>
       <div class="card fc reveal" style="--d:2"><h4>Conditions</h4><ul><li><a href="stull-condition-back-pain.html">Back Pain</a></li><li><a href="stull-condition-neck-pain.html">Neck Pain</a></li><li><a href="stull-condition-headaches-and-migraines.html">Headaches & Migraines</a></li><li><a href="stull-condition-sciatica.html">Sciatica</a></li><li><a href="stull-conditions.html">All conditions</a></li></ul></div>
     </div>
@@ -371,7 +379,7 @@
 
 <div class="mobar">
   <a href="tel:9372598850" class="btn btn-ghost">Call</a>
-  <a href="#book" class="btn btn-primary">Book a Visit</a>
+  <a href="#book" class="btn btn-primary">Schedule an appointment</a>
 </div>
 
 <script src="sage.js"></script>

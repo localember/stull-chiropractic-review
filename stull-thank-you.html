@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Our Services - Stull Chiropractic Center</title>
+<title>Thank you - Stull Chiropractic Center</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -16,23 +16,38 @@
 .brand__logo--dark{display:none}
 .nav.is-stuck .brand__logo--light{display:none}
 .nav.is-stuck .brand__logo--dark{display:block}
+/* Lead form failure state. It has to be impossible to miss: the whole point of
+   the delivery rule is that a submission that did not land is visible, and the
+   patient is handed the phone number instead of a dead end. */
+.lead-err{margin:0;padding:14px 16px;border-radius:10px;background:#fdecec;
+  border:1px solid #e5a3a3;color:#8a1f1f;font-size:15px;line-height:1.45}
+.lead-err a{color:inherit;font-weight:600;text-decoration:underline}
+#lead-btn[disabled]{opacity:.6;cursor:progress}
 </style>
 </head>
 <body>
 
 <!-- ============================================================
-     HUB / INDEX - covers BOTH /conditions/ (21 cards) and
-     /services/ (14 cards). Same band sequence on the build, same
-     card, same closing CTA; only the card count and the H1 differ.
-     The conditions hub is shown because it is the harder case:
-     21 items is past the point where a flat grid can be scanned,
-     which is why the A-Z index below exists and the services hub
-     would not need one.
+     CONTACT  (/contact-us/ on the :8089 build)
 
-     GREEN hero rather than a photograph. A hub page has no single
-     subject, and the build's own answer here was a stock image
-     that did not mean anything. The band gradient plus the ghost
-     word carries it, and it varies the rhythm of the set.
+     This is now the ONLY lead form on the site. The offer page it
+     used to share a treatment with was deleted 2026-08-09: Stull
+     declined an offer, so nothing on this site sells one.
+
+     The build's version is the thinnest page on the site: a slim
+     H1 strip, then a bare Breakdance form on white with nothing
+     beside it. Same fields in the same order here - the form is
+     native BD and stays native BD - but the page now answers the
+     things a person about to call actually wants: where you are,
+     when you are open, what happens after they hit send.
+
+     /special/ IS NOT THIS PAGE. The first pass of this set said
+     it was, and that was wrong: /special/ is the new-patient
+     OFFER page and the fallback target of `bookingLink()`, so it
+     carries the offer cards and their popups. It has its own
+     mockup, `special.html`. The only thing the two share is a
+     form. Every booking CTA on this set now points there, which
+     is what the build does.
      ============================================================ -->
 
 <div class="util">
@@ -51,7 +66,7 @@
     <div class="nav__inner">
       <a href="index.html" class="brand" aria-label="Stull Chiropractic Center"><img class="brand__logo brand__logo--light" src="assets/stull-logo-white.svg" alt="Stull Chiropractic Center"><img class="brand__logo brand__logo--dark" src="assets/stull-logo-black.svg" alt="" aria-hidden="true"></a>
       <div class="nav__links">
-        <a href="index.html">Home</a><a href="stull-about.html">Who We Are</a><a href="stull-services.html" class="on">Services</a><a href="stull-conditions.html">Conditions</a><a href="stull-new-patient-forms.html">Patient Forms</a><a href="stull-contact.html">Contact</a>
+        <a href="index.html">Home</a><a href="stull-about.html">Who We Are</a><a href="stull-services.html">Services</a><a href="stull-conditions.html">Conditions</a><a href="stull-new-patient-forms.html">Patient Forms</a><a href="stull-contact.html">Contact</a>
       </div>
       <div class="nav__cta">
         <!-- BOOKING LINK INSERTION POINT (2026-08-09). His online booking is for EXISTING
@@ -67,15 +82,21 @@
   </div>
 </nav>
 
+<!-- ============================================================
+     THANK YOU. Reached ONLY after a lead POST returned a readable
+     2xx (see the delivery block in stull-contact.html). Never on a
+     timer and never optimistically, so arriving here means the
+     request reached GoHighLevel.
+     ============================================================ -->
 <header class="ihero ihero--green on-dark">
-  <div class="ghost ghost--r" style="right:-3%;top:14%">Conditions</div>
+  <div class="ghost ghost--r" style="right:-3%;top:18%">Thanks</div>
   <div class="wrap">
     <div class="ihero__in">
-      <nav class="crumb reveal" style="--d:0"><a href="index.html">Home</a><i>/</i><b>Conditions</b></nav>
-      <span class="eyebrow reveal" style="--d:1">Services we offer</span>
-      <h1><span class="mask"><span style="--d:2">Services we offer</span></span><span class="mask"><span style="--d:3">with in <em style="font-style:normal;color:var(--g-lite)">Kettering</em></span></span></h1>
+      <nav class="crumb reveal" style="--d:0"><a href="index.html">Home</a><i>/</i><b>Thank you</b></nav>
+      <span class="eyebrow reveal" style="--d:1">Message received</span>
+      <h1><span class="mask"><span style="--d:2">Thank <em style="font-style:normal;color:var(--g-lite)">you</em></span></span></h1>
       <span class="rule"></span>
-      <p class="ihero__sub reveal" style="--d:5">Whatever brought you in, care starts the same way: find why it hurts, then build a simple plan around how you move. Explore the conditions we see most.</p>
+      <p class="ihero__sub reveal" style="--d:5">We have your details. Someone from the office will call you to confirm a time that works for you. If you would rather not wait, the number is <a href="tel:9372598850" style="color:inherit;font-weight:600">(937) 259-8850</a>.</p>
     </div>
   </div>
   <div class="wave" style="--wave-end:#fff">
@@ -84,50 +105,23 @@
   </div>
 </header>
 
-<section class="sec grain">
-  <div class="wrap">
-
-    <!-- A-Z index. Pure anchors, no script: each letter jumps to the first
-         card starting with it. 21 cards is past the point where a flat grid
-         can be scanned, which is the only reason this exists - the services
-         hub, at 14, does not get one. -->
-    
-
-    <div class="hub">
-      <a class="card hcard reveal" style="--d:0" href="stull-service-chiropractic-adjustment.html"><h3>Chiropractic Adjustment</h3><p>Gentle, precise adjustments aimed at restoring alignment so the nerves and muscles can do their job.</p><span class="hcard__go">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="card hcard reveal" style="--d:1" href="stull-service-spinal-decompression.html"><h3>Spinal Decompression</h3><p>For disc-related pain that has not settled with rest.</p><span class="hcard__go">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="card hcard reveal" style="--d:2" href="stull-service-mls-laser-therapy.html"><h3>MLS Laser Therapy</h3><p>Focused light over the sore area to settle inflammation, with no recovery time after.</p><span class="hcard__go">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="card hcard reveal" style="--d:3" href="stull-service-shockwave-therapy.html"><h3>Shockwave Therapy</h3><p>For stubborn soft-tissue pain that has stopped responding to rest.</p><span class="hcard__go">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="card hcard reveal" style="--d:4" href="stull-service-custom-orthotics.html"><h3>Custom Orthotics</h3><p>Supports molded to your own feet, for when the problem starts from the ground up.</p><span class="hcard__go">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-      
-      
-      
-      
-      
-    </div>
-  </div>
-</section>
-
-<!-- ============ CTA ============ -->
-<section class="sec sec--green on-dark sec--wavebottom">
-  <div class="ghost ghost--r" style="right:-2%;top:8%">Book</div>
+<section class="sec sec--paper grain">
   <div class="wrap">
     <div class="endcta reveal">
-      <span class="eyebrow">Next step</span>
-      <h2 style="margin-top:.3em">Not sure where you fit?</h2>
-      <p class="lead">New patients are welcome. Come as you are, we will take it from there.</p>
+      <span class="eyebrow">While you wait</span>
+      <h2 style="margin-top:.3em">Save yourself the clipboard</h2>
+      <p class="lead">Your new patient paperwork fills in on your phone in about ten minutes, and it never leaves your device. Bring it printed, or save it and hand it over at the desk.</p>
       <div class="endcta__acts">
-        <a href="stull-contact.html#form" class="btn btn-lite">Schedule an appointment</a>
-        <a href="tel:9372598850" class="btn btn-ghost">(937) 259-8850</a>
+        <a href="stull-new-patient-forms.html" class="btn btn-primary">Fill in your paperwork</a>
+        <a href="index.html" class="btn btn-ghost">Back to the home page</a>
       </div>
-      <p style="margin-top:1.1em;font-size:15px;opacity:.85">Tell us a good time and we'll call to confirm.</p>
     </div>
-  </div>
-  <div class="wave" style="--wave-end:var(--paper-2)">
-    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
-    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
   </div>
 </section>
 
 <footer class="foot" id="foot">
   <div class="wrap">
-    <div class="foot__megawrap"><h2 class="foot__mega" id="mega">Contact <em>Us</em></h2></div>
+    <div class="foot__megawrap"><h2 class="foot__mega" id="mega">Come <em>In</em></h2></div>
     <div class="foot__cards">
       <div class="card fc fc--g reveal" style="--d:0"><h4>Stull Chiropractic Center</h4><ul><li>2200 Woodman Drive<br>Kettering, OH</li><li><a href="tel:9372598850">(937) 259-8850</a></li><li>Open Monday to Thursday</li><li><a href="stull-new-patient-forms.html">New patient paperwork</a></li></ul></div>
       <div class="card fc reveal" style="--d:1"><h4>Services</h4><ul><li><a href="stull-services.html">Chiropractic Adjustment</a></li><li><a href="stull-service-spinal-decompression.html">Spinal Decompression</a></li><li><a href="stull-service-mls-laser-therapy.html">MLS Laser Therapy</a></li><li><a href="stull-service-shockwave-therapy.html">Shockwave Therapy</a></li><li><a href="stull-service-custom-orthotics.html">Custom Orthotics</a></li></ul></div>
@@ -139,7 +133,7 @@
 
 <div class="mobar">
   <a href="tel:9372598850" class="btn btn-ghost">Call</a>
-  <a href="stull-contact.html#form" class="btn btn-primary">Schedule an appointment</a>
+  <a href="stull-contact.html#form" class="btn btn-primary">Send a message</a>
 </div>
 
 <script src="sage.js"></script>
