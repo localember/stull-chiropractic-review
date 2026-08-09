@@ -113,7 +113,8 @@
           <div class="field"><label for="ln">Last name <i>*</i></label><input id="ln" name="last_name" type="text" autocomplete="family-name" required></div>
           <div class="field"><label for="ph">Phone <i>*</i></label><input id="ph" name="phone" type="tel" autocomplete="tel" required></div>
           <div class="field"><label for="em">Email <i>*</i></label><input id="em" name="email" type="email" autocomplete="email" required></div>
-          <div class="field field--full"><label for="ms">Message <i>*</i></label><textarea id="ms" name="message" required placeholder="What is going on, and when did it start? A good time to reach you helps too."></textarea></div>
+          <div class="field field--full"><label for="pt">What day or time works best? <span style="font-weight:400;opacity:.7">(optional)</span></label><input id="pt" name="preferred_time" type="text" placeholder="For example, weekday mornings, or Thursday after 3"></div>
+          <div class="field field--full"><label for="ms">Message <i>*</i></label><textarea id="ms" name="message" required placeholder="What is going on, and when did it start?"></textarea></div>
           <div class="field field--full">
             <p class="lead-err" id="lead-err" role="alert" hidden></p>
           </div>
@@ -298,7 +299,8 @@
       last:  form.last_name.value.trim(),
       phone: form.phone.value.trim(),
       email: form.email.value.trim(),
-      msg:   form.message.value.trim()
+      msg:   form.message.value.trim(),
+      when:  form.preferred_time.value.trim()
     };
 
     if (!f.first || !f.last) { return fail('Please tell us your name.'); }
@@ -330,6 +332,7 @@
       'Phone':      f.phone,
       'Email':      f.email,
       'Message':    f.msg,
+      'Preferred Time': f.when,
       'Source':     'Website contact form'
     });
 

@@ -144,7 +144,8 @@
             <div class="field"><label for="oln">Last name <i>*</i></label><input id="oln" name="last_name" type="text" autocomplete="family-name" required></div>
             <div class="field"><label for="oph">Phone <i>*</i></label><input id="oph" name="phone" type="tel" autocomplete="tel" required></div>
             <div class="field"><label for="oem">Email <i>*</i></label><input id="oem" name="email" type="email" autocomplete="email" required></div>
-            <div class="field field--full"><label for="oms">What is going on? <i>*</i></label><textarea id="oms" name="message" required placeholder="A sentence is plenty. When did it start, and when is a good time to reach you?"></textarea></div>
+            <div class="field field--full"><label for="opt">What day or time works best? <span style="font-weight:400;opacity:.7">(optional)</span></label><input id="opt" name="preferred_time" type="text" placeholder="For example, weekday mornings, or Thursday after 3"></div>
+            <div class="field field--full"><label for="oms">What is going on? <i>*</i></label><textarea id="oms" name="message" required placeholder="A sentence is plenty. When did it start?"></textarea></div>
             <div class="field field--full">
               <p class="lead-err" id="lead-err" role="alert" hidden></p>
             </div>
@@ -301,7 +302,8 @@
       last:  form.last_name.value.trim(),
       phone: form.phone.value.trim(),
       email: form.email.value.trim(),
-      msg:   form.message.value.trim()
+      msg:   form.message.value.trim(),
+      when:  form.preferred_time.value.trim()
     };
 
     if (!f.first || !f.last) { return fail('Please tell us your name.'); }
@@ -333,6 +335,7 @@
       'Phone':      f.phone,
       'Email':      f.email,
       'Message':    f.msg,
+      'Preferred Time': f.when,
       'Source':     'Website new patient page'
     });
 
