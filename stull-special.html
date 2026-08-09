@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Contact Us - Stull Chiropractic Center, Kettering OH</title>
+<title>New Patients - Stull Chiropractic Center, Kettering OH</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -27,24 +27,6 @@
 </head>
 <body>
 
-<!-- ============================================================
-     CONTACT  (/contact-us/ on the :8089 build)
-
-     This is now the ONLY lead form on the site. The offer page it
-     used to share a treatment with was deleted 2026-08-09: Stull
-     declined an offer, so nothing on this site sells one.
-
-     The build's version is the thinnest page on the site: a slim
-     H1 strip, then a bare Breakdance form on white with nothing
-     beside it. Same fields in the same order here - the form is
-     native BD and stays native BD - but the page now answers the
-     things a person about to call actually wants: where you are,
-     when you are open, what happens after they hit send.
-
-     Every booking CTA on the site now points at #form on this
-     page. There is no /special/ any more.
-     ============================================================ -->
-
 <div class="util">
   <div class="wrap">
     <a href="https://www.google.com/maps/search/?api=1&query=Stull+Chiropractic+Center%2C+2200+Woodman+Drive%2C+Kettering%2C+OH+45420" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 2200 Woodman Drive, Kettering</a>
@@ -61,7 +43,7 @@
     <div class="nav__inner">
       <a href="index.html" class="brand" aria-label="Stull Chiropractic Center"><img class="brand__logo brand__logo--light" src="assets/stull-logo-white.svg" alt="Stull Chiropractic Center"><img class="brand__logo brand__logo--dark" src="assets/stull-logo-black.svg" alt="" aria-hidden="true"></a>
       <div class="nav__links">
-        <a href="index.html">Home</a><a href="stull-about.html">Who We Are</a><a href="stull-services.html">Services</a><a href="stull-conditions.html">Conditions</a><a href="stull-new-patient-forms.html">Patient Forms</a><a href="stull-contact.html" class="on">Contact</a>
+        <a href="index.html">Home</a><a href="stull-about.html">Who We Are</a><a href="stull-services.html">Services</a><a href="stull-conditions.html">Conditions</a><a href="stull-new-patient-forms.html">Patient Forms</a><a href="stull-contact.html">Contact</a>
       </div>
       <div class="nav__cta">
         <!-- BOOKING LINK INSERTION POINT (2026-08-09). His online booking is for EXISTING
@@ -77,15 +59,46 @@
   </div>
 </nav>
 
+<!-- ============================================================
+     /special/ - THE NEW PATIENT ENTRY POINT
+
+     🔴 THIS PAGE STAYS. It was deleted 2026-08-09 and restored the
+     same day on John's ruling. The reason, so nobody deletes it
+     again: it is a DISTINCT LEAD SOURCE. The contact page takes
+     heavy bot spam, and folding this traffic into it destroys our
+     ability to tell a real new-patient enquiry from spam. Keeping
+     the URL also means a future price-point offer needs a copy
+     change, not a rebuild and a redirect.
+
+     `bookingLink()` in lift-bands-core.mjs falls back to
+     `/special/`, so for any client with no `brand.booking_url`
+     every booking CTA on every page lands here. That is 85 links
+     on this build.
+
+     THERE IS NO OFFER ON IT, AND YOU MAY NOT INVENT ONE.
+     John, 2026-08-09: no complimentary consultation, no free
+     consultation, no "no obligation" tile, no consultation offer
+     in any form, in any title, meta description, alt text or
+     schema. The old offer machinery - the price element, the
+     "Complimentary" badge, the three claim popups and their two
+     placeholder offers - was removed with the wording. The page
+     now states what a first visit consists of and nothing else.
+     ============================================================ -->
+
+
 <header class="ihero ihero--green on-dark">
-  <div class="ghost ghost--r" style="right:-3%;top:18%">Hello</div>
+  <div class="ghost ghost--r" style="right:-3%;top:14%">Start</div>
   <div class="wrap">
     <div class="ihero__in">
-      <nav class="crumb reveal" style="--d:0"><a href="index.html">Home</a><i>/</i><b>Contact</b></nav>
-      <span class="eyebrow reveal" style="--d:1">Get in touch</span>
-      <h1><span class="mask"><span style="--d:2">Contact <em style="font-style:normal;color:var(--g-lite)">us</em></span></span></h1>
+      <nav class="crumb reveal" style="--d:0"><a href="index.html">Home</a><i>/</i><b>New patients</b></nav>
+      <span class="eyebrow reveal" style="--d:1">New patients</span>
+      <h1><span class="mask"><span style="--d:2">Your first</span></span><span class="mask"><span style="--d:3">visit <em style="font-style:normal;color:var(--g-lite)">here</em></span></span></h1>
       <span class="rule"></span>
-      <p class="ihero__sub reveal" style="--d:5">Tell us what is going on and we will call you back to book you in. If you would rather just talk to somebody, the number is at the top of the page.</p>
+      <p class="ihero__sub reveal" style="--d:5">Tell us a little about what brought you in and we will call you to book it at our Kettering office.</p>
+      <div class="chips reveal" style="--d:6">
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> No referral needed</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg> Paperwork fills in on your phone</span>
+      </div>
     </div>
   </div>
   <div class="wave" style="--wave-end:#fff">
@@ -94,73 +107,55 @@
   </div>
 </header>
 
-<section class="sec grain" id="form">
+<section class="sec grain" id="first-visit">
   <div class="wrap">
-    <div class="contact__grid">
+    <div class="teamstate on">
+      <div class="soffer">
 
-      <div class="reveal">
-        <span class="eyebrow">Send us a message</span>
-        <h2 style="font-size:clamp(28px,3vw,44px);margin-top:.3em">We will get back to you</h2>
-        <span class="rule"></span>
-        <p class="lead" style="margin-top:1.3em;margin-bottom:2em">Fill out the form, including the required fields, and we will contact you as soon as possible.</p>
-
-        <!-- Native Breakdance FormBuilder, one to one with the build's fields.
-             The mockup styles them; it does not replace the element.
-             Phone is REQUIRED here: the promise under the button is that we
-             call to confirm, and we cannot keep it without a number. -->
-        <form class="form" id="lead-form" novalidate>
-          <div class="field"><label for="fn">First name <i>*</i></label><input id="fn" name="first_name" type="text" autocomplete="given-name" required></div>
-          <div class="field"><label for="ln">Last name <i>*</i></label><input id="ln" name="last_name" type="text" autocomplete="family-name" required></div>
-          <div class="field"><label for="ph">Phone <i>*</i></label><input id="ph" name="phone" type="tel" autocomplete="tel" required></div>
-          <div class="field"><label for="em">Email <i>*</i></label><input id="em" name="email" type="email" autocomplete="email" required></div>
-          <div class="field field--full"><label for="ms">Message <i>*</i></label><textarea id="ms" name="message" required placeholder="What is going on, and when did it start? A good time to reach you helps too."></textarea></div>
-          <div class="field field--full">
-            <p class="lead-err" id="lead-err" role="alert" hidden></p>
-          </div>
-          <div class="form__act">
-            <button type="submit" class="btn btn-primary" id="lead-btn">Schedule an appointment</button>
-            <small>Tell us a good time and we&rsquo;ll call to confirm.</small>
-          </div>
-        </form>
-      </div>
-
-      <aside class="info reveal" style="--d:1">
-        <div class="info__row">
-          <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-          <span><b style="font-weight:500">2200 Woodman Drive, Kettering, OH</b><small>Kettering, OH 45420</small></span>
-        </div>
-        <div class="info__row">
-          <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg></span>
-          <span><a href="tel:9372598850" style="font-weight:500">(937) 259-8850</a><small>The fastest way to reach the front desk</small></span>
-        </div>
-
-        <div class="card" style="padding:clamp(20px,1.8vw,26px)">
-          <h4 style="font-size:16px">Office hours</h4>
-          <ul class="hours" style="margin-top:1em">
-            <li><span>Monday</span><b>9:00 AM – 1:00 PM, 3:00 PM – 6:00 PM</b></li>
-            <li><span>Tuesday</span><b>9:00 AM – 1:00 PM, 3:00 PM – 5:00 PM</b></li>
-            <li><span>Wednesday</span><b>9:00 AM – 1:00 PM, 3:00 PM – 6:00 PM</b></li>
-            <li><span>Thursday</span><b>9:00 AM – 1:00 PM, 3:00 PM – 6:00 PM</b></li>
-            <li><span>Friday</span><b>Closed</b></li>
-            <li><span>Saturday</span><b>Closed</b></li>
-            <li><span>Sunday</span><b>Closed</b></li>
+        <div class="reveal">
+          <span class="soffer__badge">First visit</span>
+          <h2>What a first visit is</h2>
+          <span class="rule"></span>
+          <p class="soffer__word">A conversation and a careful check, so you find out whether we can actually help.</p>
+          <ul class="offer__inc">
+            <li>A full history, and the time to explain what is going on</li>
+            <li>An examination of how you actually move</li>
+            <li>A plain-language explanation of what we found</li>
+            <li>A straight answer, including if the answer is somebody else</li>
           </ul>
+          <p class="soffer__fine">If you would rather not fill anything in on the day, your new patient paperwork <a href="stull-new-patient-forms.html" style="color:var(--g-band);font-weight:500">fills in on your phone</a> in about ten minutes and never leaves your device.</p>
         </div>
 
-        <div class="mapslot" style="border:0;padding:0;overflow:hidden">
-          <iframe src="https://maps.google.com/maps?q=Stull%20Chiropractic%20Center%2C%202200%20Woodman%20Drive%2C%20Kettering%2C%20OH%2045420&z=15&output=embed" style="width:100%;height:100%;border:0;border-radius:inherit" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Stull Chiropractic Center"></iframe>
+        <div class="soffer__form reveal" style="--d:1">
+          <span class="eyebrow">Get started</span>
+          <h3 style="margin-top:.4em">Schedule an appointment</h3>
+          <p>Leave us your details and we will call you back.</p>
+          <!-- Same delivery layer as the contact form, deliberately a SEPARATE
+               lead source: its Source field and its GA4 form_id say
+               "new-patients", so an enquiry from here can be told apart from
+               one that came through the contact page. -->
+          <form class="form" id="lead-form" novalidate>
+            <div class="field"><label for="ofn">First name <i>*</i></label><input id="ofn" name="first_name" type="text" autocomplete="given-name" required></div>
+            <div class="field"><label for="oln">Last name <i>*</i></label><input id="oln" name="last_name" type="text" autocomplete="family-name" required></div>
+            <div class="field"><label for="oph">Phone <i>*</i></label><input id="oph" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="field"><label for="oem">Email <i>*</i></label><input id="oem" name="email" type="email" autocomplete="email" required></div>
+            <div class="field field--full"><label for="oms">What is going on? <i>*</i></label><textarea id="oms" name="message" required placeholder="A sentence is plenty. When did it start, and when is a good time to reach you?"></textarea></div>
+            <div class="field field--full">
+              <p class="lead-err" id="lead-err" role="alert" hidden></p>
+            </div>
+            <div class="form__act">
+              <button type="submit" class="btn btn-primary" id="lead-btn">Schedule an appointment</button>
+              <small>Tell us a good time and we&rsquo;ll call to confirm.</small>
+            </div>
+          </form>
         </div>
-      </aside>
 
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ WHAT HAPPENS NEXT ============
-     Not on the build's contact page. Added because the single most
-     common reason a chiropractic contact form is abandoned is not
-     knowing what sending it commits you to. Three steps, the same
-     component as the service page's process band. -->
+<!-- ============ WHAT HAPPENS NEXT ============ -->
 <section class="sec sec--paper grain">
   <div class="wrap">
     <div class="head reveal">
@@ -172,27 +167,26 @@
       <p class="head__note lead">Three steps, and we tell you what we find at each one.</p>
     </div>
     <div class="steps" style="grid-template-columns:repeat(3,1fr)">
-      <div class="step reveal" style="--d:0"><span class="step__n">1</span><h3>We call you back</h3><p>During office hours, from the number above.</p></div>
+      <div class="step reveal" style="--d:0"><span class="step__n">1</span><h3>We call you back</h3><p>During office hours, from the number at the top of the page.</p></div>
       <div class="step reveal" style="--d:1"><span class="step__n">2</span><h3>We find you a time</h3><p>We will work around your schedule and confirm it with you.</p></div>
       <div class="step reveal" style="--d:2"><span class="step__n">3</span><h3>Your first visit</h3><p>A conversation, a careful check, and a plan you agree to before anything else happens.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============ NEW PATIENT PAPERWORK ============
-     The intake system built 2026-08-08. It is one self-contained page that
-     assembles the completed PDF on the patient's own phone and sends nothing
-     anywhere, which is the whole reason it needs no BAA. Linked, not embedded:
-     it carries its own layout because it is a ten-minute form, not a band. -->
+<!-- ============ CTA ============ -->
 <section class="sec sec--green on-dark sec--wavebottom">
+  <div class="ghost ghost--r" style="right:-2%;top:8%">Help</div>
   <div class="wrap">
     <div class="endcta reveal">
-      <span class="eyebrow">Before your first visit</span>
-      <h2 style="margin-top:.3em">Fill in your paperwork on your phone</h2>
-      <p class="lead">About ten minutes, and it saves you doing it on a clipboard in the waiting room. Nothing you type is sent anywhere. It stays on your own device until you print it or send it yourself.</p>
+      <span class="eyebrow">Still deciding</span>
+      <h2 style="margin-top:.3em">Questions before you book?</h2>
+      <p class="lead">Call us and we will talk it through. No pressure either way.</p>
       <div class="endcta__acts">
-        <a href="stull-new-patient-forms.html" class="btn btn-lite">Start your paperwork</a>
+        <a href="#first-visit" class="btn btn-lite">Schedule an appointment</a>
+        <a href="tel:9372598850" class="btn btn-ghost">(937) 259-8850</a>
       </div>
+      <p style="margin-top:1.1em;font-size:15px;opacity:.85">Tell us a good time and we'll call to confirm.</p>
     </div>
   </div>
   <div class="wave" style="--wave-end:var(--paper-2)">
@@ -203,7 +197,7 @@
 
 <footer class="foot" id="foot">
   <div class="wrap">
-    <div class="foot__megawrap"><h2 class="foot__mega" id="mega">Come <em>In</em></h2></div>
+    <div class="foot__megawrap"><h2 class="foot__mega" id="mega">Start <em>Here</em></h2></div>
     <div class="foot__cards">
       <div class="card fc fc--g reveal" style="--d:0"><h4>Stull Chiropractic Center</h4><ul><li>2200 Woodman Drive<br>Kettering, OH</li><li><a href="tel:9372598850">(937) 259-8850</a></li><li>Open Monday to Thursday</li><li><a href="stull-new-patient-forms.html">New patient paperwork</a></li></ul></div>
       <div class="card fc reveal" style="--d:1"><h4>Services</h4><ul><li><a href="stull-services.html">Chiropractic Adjustment</a></li><li><a href="stull-service-spinal-decompression.html">Spinal Decompression</a></li><li><a href="stull-service-mls-laser-therapy.html">MLS Laser Therapy</a></li><li><a href="stull-service-shockwave-therapy.html">Shockwave Therapy</a></li><li><a href="stull-service-custom-orthotics.html">Custom Orthotics</a></li></ul></div>
@@ -215,7 +209,7 @@
 
 <div class="mobar">
   <a href="tel:9372598850" class="btn btn-ghost">Call</a>
-  <a href="#form" class="btn btn-primary">Send a message</a>
+  <a href="#first-visit" class="btn btn-primary">Schedule an appointment</a>
 </div>
 
 <script src="sage.js"></script>
@@ -310,7 +304,7 @@
     }
     if (!f.msg) { return fail('Please tell us briefly what is going on.'); }
 
-    track('lead_form_attempt', { form_id: 'stull-contact', form_location: 'contact' });
+    track('lead_form_attempt', { form_id: 'stull-new-patients', form_location: 'special' });
 
     sending = true;
     btn.disabled = true;
@@ -330,7 +324,7 @@
       'Phone':      f.phone,
       'Email':      f.email,
       'Message':    f.msg,
-      'Source':     'Website contact form'
+      'Source':     'Website new patient page'
     });
 
     /* Redirect ONLY on a readable 2xx. No no-cors blind resend and no timed
@@ -341,7 +335,7 @@
     fetch(LEAD_HOOK, { method: 'POST', body: body })
       .then(function (r) {
         if (!r || !r.ok) { throw new Error('status ' + (r && r.status)); }
-        track('lead_form_success', { form_id: 'stull-contact', form_location: 'contact' });
+        track('lead_form_success', { form_id: 'stull-new-patients', form_location: 'special' });
         window.location.href = THANKS;
       })
       .catch(function () {
