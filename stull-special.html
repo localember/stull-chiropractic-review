@@ -19,6 +19,27 @@
 /* Lead form failure state. It has to be impossible to miss: the whole point of
    the delivery rule is that a submission that did not land is visible, and the
    patient is handed the phone number instead of a dead end. */
+/* ONE BAND, not two (John, 2026-08-09). The hero and the "what a first visit is"
+   band used to be separate, so the page opened with a headline and no way to act
+   on it: it read as "click something to schedule" while the form sat below the
+   fold. They are now a single band with the form beside the headline.
+   sage.css is byte-identical; everything here is scoped to .sp-hero. */
+.ihero--green .ihero__in{max-width:100%}
+.ihero{align-items:center}
+.sp-hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+  gap:clamp(28px,4vw,68px);align-items:center}
+/* the left column sits on green, so the .soffer text colours have to invert */
+.sp-hero .offer__inc{border-top-color:rgba(255,255,255,.22);max-width:46ch}
+.sp-hero .offer__inc li{color:rgba(255,255,255,.86);font-size:15.5px;padding-left:2.1em}
+.sp-hero .offer__inc li::before{width:18px;height:18px;top:.3em;background-size:11px;
+  background-color:rgba(255,255,255,.9)}
+/* the form card stays a white card inside an .on-dark band, so its own text
+   has to be re-asserted against .on-dark h3 / .ihero .eyebrow */
+.sp-hero .soffer__form{margin:0}
+.sp-hero .soffer__form h3{color:var(--ink)}
+.sp-hero .soffer__form .eyebrow{color:var(--g-mid);letter-spacing:.2em}
+.sp-hero .soffer__form > p{color:var(--ink-soft)}
+@media (max-width:1080px){ .sp-hero{grid-template-columns:1fr} }
 .lead-err{margin:0;padding:14px 16px;border-radius:10px;background:#fdecec;
   border:1px solid #e5a3a3;color:#8a1f1f;font-size:15px;line-height:1.45}
 .lead-err a{color:inherit;font-weight:600;text-decoration:underline}
@@ -43,7 +64,7 @@
     <div class="nav__inner">
       <a href="index.html" class="brand" aria-label="Stull Chiropractic Center"><img class="brand__logo brand__logo--light" src="assets/stull-logo-white.svg" alt="Stull Chiropractic Center"><img class="brand__logo brand__logo--dark" src="assets/stull-logo-black.svg" alt="" aria-hidden="true"></a>
       <div class="nav__links">
-        <a href="index.html">Home</a><a href="stull-about.html">Who We Are</a><a href="stull-services.html">Services</a><a href="stull-conditions.html">Conditions</a><a href="stull-new-patient-forms.html">Patient Forms</a><a href="stull-contact.html">Contact</a>
+        <a href="index.html">Home</a><a href="stull-about.html">Who We Are</a><a href="stull-services.html">Services</a><a href="stull-conditions.html">Conditions</a><a href="stull-new-patient-forms.html" target="_blank" rel="noopener">Patient Forms</a><a href="stull-contact.html">Contact</a>
       </div>
       <div class="nav__cta">
         <!-- BOOKING LINK INSERTION POINT (2026-08-09). His online booking is for EXISTING
@@ -86,47 +107,31 @@
      ============================================================ -->
 
 
-<header class="ihero ihero--green on-dark">
-  <div class="ghost ghost--r" style="right:-3%;top:14%">Start</div>
+<header class="ihero ihero--green on-dark" id="first-visit">
+  <div class="ghost ghost--r" style="right:-3%;top:10%">Start</div>
   <div class="wrap">
     <div class="ihero__in">
-      <nav class="crumb reveal" style="--d:0"><a href="index.html">Home</a><i>/</i><b>New patients</b></nav>
-      <span class="eyebrow reveal" style="--d:1">New patients</span>
-      <h1><span class="mask"><span style="--d:2">Your first</span></span><span class="mask"><span style="--d:3">visit <em style="font-style:normal;color:var(--g-lite)">here</em></span></span></h1>
-      <span class="rule"></span>
-      <p class="ihero__sub reveal" style="--d:5">Tell us a little about what brought you in and we will call you to book it at our Kettering office.</p>
-      <div class="chips reveal" style="--d:6">
-        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> No referral needed</span>
-        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg> Paperwork fills in on your phone</span>
-      </div>
-    </div>
-  </div>
-  <div class="wave" style="--wave-end:#fff">
-    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
-    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
-  </div>
-</header>
-
-<section class="sec grain" id="first-visit">
-  <div class="wrap">
-    <div class="teamstate on">
-      <div class="soffer">
+      <div class="sp-hero">
 
         <div class="reveal">
-          <span class="soffer__badge">First visit</span>
-          <h2>What a first visit is</h2>
+          <nav class="crumb"><a href="index.html">Home</a><i>/</i><b>New patients</b></nav>
+          <span class="eyebrow">New patients</span>
+          <h1><span class="mask"><span style="--d:2">Your first</span></span><span class="mask"><span style="--d:3">visit <em style="font-style:normal;color:var(--g-lite)">here</em></span></span></h1>
           <span class="rule"></span>
-          <p class="soffer__word">A conversation and a careful check, so you find out whether we can actually help.</p>
+          <p class="ihero__sub">A conversation and a careful check, so you find out whether we can actually help. Tell us what brought you in and we will call you to book it at our Kettering office.</p>
           <ul class="offer__inc">
             <li>A full history, and the time to explain what is going on</li>
             <li>An examination of how you actually move</li>
             <li>A plain-language explanation of what we found</li>
             <li>A straight answer, including if the answer is somebody else</li>
           </ul>
-          <p class="soffer__fine">If you would rather not fill anything in on the day, your new patient paperwork <a href="stull-new-patient-forms.html" style="color:var(--g-band);font-weight:500">fills in on your phone</a> in about ten minutes and never leaves your device.</p>
+          <div class="chips">
+            <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> No referral needed</span>
+            <a class="chip" href="stull-new-patient-forms.html" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg> Fill your paperwork in on your phone <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg></a>
+          </div>
         </div>
 
-        <div class="soffer__form reveal" style="--d:1">
+        <div class="soffer__form reveal" id="schedule" style="--d:1">
           <span class="eyebrow">Get started</span>
           <h3 style="margin-top:.4em">Schedule an appointment</h3>
           <p>Leave us your details and we will call you back.</p>
@@ -153,7 +158,11 @@
       </div>
     </div>
   </div>
-</section>
+  <div class="wave" style="--wave-end:var(--paper-2)">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+  </div>
+</header>
 
 <!-- ============ WHAT HAPPENS NEXT ============ -->
 <section class="sec sec--paper grain">
@@ -183,7 +192,7 @@
       <h2 style="margin-top:.3em">Questions before you book?</h2>
       <p class="lead">Call us and we will talk it through. No pressure either way.</p>
       <div class="endcta__acts">
-        <a href="#first-visit" class="btn btn-lite">Schedule an appointment</a>
+        <a href="#schedule" class="btn btn-lite">Schedule an appointment</a>
         <a href="tel:9372598850" class="btn btn-ghost">(937) 259-8850</a>
       </div>
       <p style="margin-top:1.1em;font-size:15px;opacity:.85">Tell us a good time and we'll call to confirm.</p>
@@ -199,7 +208,7 @@
   <div class="wrap">
     <div class="foot__megawrap"><h2 class="foot__mega" id="mega">Start <em>Here</em></h2></div>
     <div class="foot__cards">
-      <div class="card fc fc--g reveal" style="--d:0"><h4>Stull Chiropractic Center</h4><ul><li>2200 Woodman Drive<br>Kettering, OH</li><li><a href="tel:9372598850">(937) 259-8850</a></li><li>Open Monday to Thursday</li><li><a href="stull-new-patient-forms.html">New patient paperwork</a></li></ul></div>
+      <div class="card fc fc--g reveal" style="--d:0"><h4>Stull Chiropractic Center</h4><ul><li>2200 Woodman Drive<br>Kettering, OH</li><li><a href="tel:9372598850">(937) 259-8850</a></li><li>Open Monday to Thursday</li><li><a href="stull-new-patient-forms.html" target="_blank" rel="noopener">New patient paperwork</a></li></ul></div>
       <div class="card fc reveal" style="--d:1"><h4>Services</h4><ul><li><a href="stull-services.html">Chiropractic Adjustment</a></li><li><a href="stull-service-spinal-decompression.html">Spinal Decompression</a></li><li><a href="stull-service-mls-laser-therapy.html">MLS Laser Therapy</a></li><li><a href="stull-service-shockwave-therapy.html">Shockwave Therapy</a></li><li><a href="stull-service-custom-orthotics.html">Custom Orthotics</a></li></ul></div>
       <div class="card fc reveal" style="--d:2"><h4>Conditions</h4><ul><li><a href="stull-conditions.html">Back Pain</a></li><li><a href="stull-condition-neck-pain.html">Neck Pain</a></li><li><a href="stull-condition-headaches-and-migraines.html">Headaches & Migraines</a></li><li><a href="stull-condition-sciatica.html">Sciatica</a></li><li><a href="stull-conditions.html">All conditions</a></li></ul></div>
     </div>
@@ -209,7 +218,7 @@
 
 <div class="mobar">
   <a href="tel:9372598850" class="btn btn-ghost">Call</a>
-  <a href="#first-visit" class="btn btn-primary">Schedule an appointment</a>
+  <a href="#schedule" class="btn btn-primary">Schedule an appointment</a>
 </div>
 
 <script src="sage.js"></script>
